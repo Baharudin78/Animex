@@ -9,7 +9,6 @@ class AnimeRepoImplement(
     private var animeApi: AnimeApi,
     private var animeDao: AnimeDao
 ) : AnimeRepository {
-    override suspend fun getListAnime(): Response<AnimeResponse> {
-        TODO()
-    }
+    override suspend fun getListAnime(): Response<AnimeResponse> =
+        animeApi.getAnimeList()
 }

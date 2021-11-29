@@ -1,7 +1,8 @@
-package com.baharudin.animex
+package com.baharudin.animex.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.baharudin.animex.R
 import dagger.hilt.android.AndroidEntryPoint
 
 

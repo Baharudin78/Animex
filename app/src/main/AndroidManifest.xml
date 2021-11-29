@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Animex">
         <activity
-            android:name=".BaseActivity"
+            android:name=".ui.BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
