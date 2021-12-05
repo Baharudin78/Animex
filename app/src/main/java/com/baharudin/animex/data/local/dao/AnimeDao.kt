@@ -10,7 +10,7 @@ interface AnimeDao {
     suspend fun insertFavorit(animeResponse: AnimeResponse)
 
     @Query("SELECT * FROM anime_list")
-    suspend fun getAllFavorit() : Flow<List<AnimeResponse>>
+    fun getAllFavorit() : Flow<List<AnimeResponse>>
 
     @Delete
     suspend fun deleteFavorit(animeResponse: AnimeResponse)

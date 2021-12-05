@@ -1,6 +1,7 @@
 package com.baharudin.animex.data.model.anime
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
 @Entity(tableName = "anime_list")
@@ -14,7 +15,8 @@ data class AnimeResponse(
     val episode_duration: Int,
     val episodes_count: Int,
     val format: Int,
-    val genres: List<String>,
+//    val genres: List<String>,
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val mal_id: Int,
     val score: Int,

@@ -2,11 +2,8 @@ package com.baharudin.animex.di
 
 import android.content.Context
 import androidx.room.Room
-import com.baharudin.animex.data.local.dao.AnimeDao
 import com.baharudin.animex.data.local.database.AnimeDatabase
 import com.baharudin.animex.data.remote.AnimeApi
-import com.baharudin.animex.data.repositori.AnimeRepoImplement
-import com.baharudin.animex.data.repositori.AnimeRepository
 import com.baharudin.animex.util.Constants.Companion.BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -74,16 +71,5 @@ object AppModule {
         animeDatabase: AnimeDatabase
     ) = animeDatabase.animeDao()
 
-    @Provides
-    @Singleton
-    fun provideRepository(
-        animeApi: AnimeApi,
-        animeDao: AnimeDao
-    ) : AnimeRepository {
-        return AnimeRepoImplement(
-            animeApi,
-            animeDao
-        )
-    }
 
 }
