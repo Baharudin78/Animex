@@ -13,7 +13,7 @@ import java.io.IOException
 
 private const val ANIME_STARTING_PAGE_INDEX = 1
 class AnimePagingSource(
-    private var animeDataResponse: RemoteAnimeSource
+    private var animeApi: AnimeApi
 ) : PagingSource<Int, AnimeResponse>(){
     override fun getRefreshKey(state: PagingState<Int, AnimeResponse>): Int? {
         return state.anchorPosition?.let {  anchorPosition ->
@@ -25,8 +25,8 @@ class AnimePagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, AnimeResponse> {
         val pageIndex = params.key ?: ANIME_STARTING_PAGE_INDEX
         return try {
-            val response = animeDataResponse.getAnimeList(pageIndex)
-            val anime = response.body()!!.animeResponse
+            val response = animeApi.getAnimeList(pageIndex)
+            val anime = response.animeResponse
             val nextKey =
                 if (anime.isEmpty()) {
                     null

@@ -7,6 +7,7 @@ import androidx.paging.cachedIn
 import com.baharudin.animex.data.local.dao.AnimeDao
 import com.baharudin.animex.data.model.anime.AnimeDataResponse
 import com.baharudin.animex.data.model.anime.AnimeResponse
+import com.baharudin.animex.data.remote.AnimeApi
 import com.baharudin.animex.data.remote.BaseApiResponse
 import com.baharudin.animex.data.remote.RemoteAnimeSource
 import com.baharudin.animex.paging.AnimePagingSource
@@ -21,7 +22,7 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class AnimeRepoImplement @Inject constructor(
-    private val remoteAnimeSource: RemoteAnimeSource,
+    private val remoteAnimeSource: AnimeApi,
     private var animeDao: AnimeDao
 ) : BaseApiResponse() {
 
